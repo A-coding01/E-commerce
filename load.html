@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f9f9f9;
+      --primary: #1a2954;
+      --accent: #000000;
+    }
+    
+    body {
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    
+    .scene {
+      position: relative;
+      width: 100%;
+      height: 200px;
+    }
+    
+    /* Moving Font Awesome Cart */
+    .cart-icon {
+      position: absolute;
+      left: -50px;
+      font-size: 60px;
+      color: var(--primary);
+      animation: moveCart 5s linear infinite;
+    }
+    
+    .loading-text {
+      position: absolute;
+      bottom: 50px;
+      width: 100%;
+      text-align: center;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.5em;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+    }
+    
+    .loading-text:after {
+      content: '.....';
+      display: inline-block;
+      width: 30px;
+      text-align: left;
+      animation: dots 2.5s infinite;
+    }
+    
+    /* Animations */
+    @keyframes moveCart {
+      0% { 
+        transform: translateX(-100px);
+      }
+      100% { 
+        transform: translateX(calc(100vw + 100px)); 
+      }
+    }
+    
+    @keyframes dots {
+      0%, 20% { content: '.'; }
+      40% { content: '..'; }
+      60% { content: '...';}
+      80% { content: '....'; }
+      100% {content: '.....';}
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <!-- Moving Cart Icon -->
+    <i class="fas fa-shopping-cart cart-icon"></i>
+    
+    <!-- Loading Text -->
+      <div class="loading-text">Loading Blings By Tens</div>
+      
+    </div>
+  </div>
+
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 5000); // 5 seconds
+  </script>
+</body>
+</html>
